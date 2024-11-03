@@ -3,7 +3,9 @@ services:
     name: yt-ringtones
     env: php
     plan: free
-    buildCommand: npm run build
-    startCommand: npm start
+    buildCommand: |
+      composer install --no-dev --prefer-dist
+      npm install && npm run build  # Ensure npm dependencies are installed
+    startCommand: php artisan serve --host 0.0.0.0 --port 3000
     envVars:
-      PHP_VERSION: "8.3"  
+      PHP_VERSION: "8.2"
