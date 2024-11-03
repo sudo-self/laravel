@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name:yt-ringtones
+    env: php
+    plan: free
+    buildCommand: composer install --no-dev --prefer-dist
+    startCommand: php artisan serve --host 0.0.0.0 --port 3000
+    envVars:
+      PHP_VERSION: "8.3"  
