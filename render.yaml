@@ -1,9 +1,9 @@
 services:
   - type: web
-    name:yt-ringtones
+    name: yt-ringtones
     env: php
     plan: free
-    buildCommand: composer install --no-dev --prefer-dist
-    startCommand: php artisan serve --host 0.0.0.0 --port 3000
+    buildCommand: npm run build
+    startCommand: npm start
     envVars:
       PHP_VERSION: "8.3"  
